@@ -16,20 +16,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Read manifest
-        id: manifest
         shell: bash
         run: |
-          python3 - <<'PY'
-          import json, os
-          with open('latest.json', encoding='utf-8') as f:
-              data = json.load(f)
-          source = data.get('sourceUrl') or data['apkUrl']
-          print(f"VERSION={data['versionName']}")
-          print(f"SOURCE={source}")
-          print(f"SHA={data['sha256']}")
-          print(f"SIZE={data['size']}")
-          PY
-          # 逐行写入 GITHUB_ENV
           python3 - <<'PY' >> "$GITHUB_ENV"
           import json
           with open('latest.json', encoding='utf-8') as f:
@@ -43,18 +31,18 @@ jobs:
       - name: Download and verify APK
         shell: bash
         env:
-          ASSET: 豆包安全护盾-${{ steps.manifest.outputs.VERSION }}.apk
+          ASSET: 豆包安全护盾-${{ env.VERSION }}.apk
         run: |
           curl -fL --retry 3 --retry-delay 2 "$SOURCE" -o "$ASSET"
           echo "$SHA  $ASSET" | sha256sum -c -
-          test "$(stat -c%s "$ASSET")" = "$SIZE"
+          test "$(stat -c%s \"$ASSET\")" = "$SIZE"
 
       - name: Publish Release
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG: v${{ steps.manifest.outputs.VERSION }}
-          ASSET: 豆包安全护盾-${{ steps.manifest.outputs.VERSION }}.apk
+          TAG: v${{ env.VERSION }}
+          ASSET: 豆包安全护盾-${{ env.VERSION }}.apk
         run: |
           NOTES=$(python3 -c "import json;d=json.load(open('latest.json',encoding='utf-8'));print('\n'.join('- '+x for x in d.get('changelog',[])))")
           if gh release view "$TAG" >/dev/null 2>&1; then
