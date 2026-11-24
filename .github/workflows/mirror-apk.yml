@@ -30,20 +30,19 @@ jobs:
 
       - name: Download and verify APK
         shell: bash
-        env:
-          ASSET: 豆包安全护盾-${{ env.VERSION }}.apk
         run: |
+          ASSET="豆包安全护盾-${VERSION}.apk"
           curl -fL --retry 3 --retry-delay 2 "$SOURCE" -o "$ASSET"
           echo "$SHA  $ASSET" | sha256sum -c -
-          test "$(stat -c%s \"$ASSET\")" = "$SIZE"
+          test "$(stat -c%s "$ASSET")" = "$SIZE"
 
       - name: Publish Release
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG: v${{ env.VERSION }}
-          ASSET: 豆包安全护盾-${{ env.VERSION }}.apk
         run: |
+          TAG="v${VERSION}"
+          ASSET="豆包安全护盾-${VERSION}.apk"
           NOTES=$(python3 -c "import json;d=json.load(open('latest.json',encoding='utf-8'));print('\n'.join('- '+x for x in d.get('changelog',[])))")
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "$ASSET" --clobber
