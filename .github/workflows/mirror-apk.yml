@@ -12,6 +12,7 @@ permissions:
 jobs:
   mirror:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -35,7 +36,7 @@ jobs:
         shell: bash
         run: |
           ASSET="豆包安全护盾-${VERSION}.apk"
-          curl -fL --retry 3 --retry-delay 2 "$SOURCE" -o "$ASSET"
+          curl -fL --connect-timeout 10 --max-time 300 --retry 3 --retry-delay 2 "$SOURCE" -o "$ASSET"
           echo "$SHA  $ASSET" | sha256sum -c -
           test "$(stat -c%s "$ASSET")" = "$SIZE"
 
@@ -45,7 +46,7 @@ jobs:
           ZIP_ASSET="source-${VERSION}.zip"
           test -n "$SOURCE_ZIP"
           test "$ZIP_SIZE" -gt 0
-          curl -fL --retry 3 --retry-delay 2 "$SOURCE_ZIP" -o "$ZIP_ASSET"
+          curl -fL --connect-timeout 10 --max-time 120 --retry 3 --retry-delay 2 "$SOURCE_ZIP" -o "$ZIP_ASSET"
           echo "$ZIP_SHA  $ZIP_ASSET" | sha256sum -c -
           test "$(stat -c%s "$ZIP_ASSET")" = "$ZIP_SIZE"
 
@@ -65,3 +66,11 @@ jobs:
           else
             gh release create "$TAG" "$ASSET" "$ZIP_ASSET" --title "豆包安全护盾 $VERSION" --notes "$NOTES"
           fi
+
+      - name: Purge jsDelivr cache
+        shell: bash
+        run: |
+          curl -fsSL --connect-timeout 10 --max-time 30 \
+            "https://purge.jsdelivr.net/gh/MAGMA0706/dou-shield-updates@main/latest.json" \
+            -o purge.json || true
+          cat purge.json || true
