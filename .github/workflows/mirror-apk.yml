@@ -61,10 +61,10 @@ jobs:
           NOTES=$(python3 -c "import json;d=json.load(open('latest.json',encoding='utf-8'));print('\n'.join('- '+x for x in d.get('changelog',[])))")
           NOTES="${NOTES}"$'\n\n'"源码包：source-${VERSION}.zip"
           if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" "$ASSET" "$ZIP_ASSET" --clobber
+            gh release upload "$TAG" "$ASSET" "$ZIP_ASSET" latest.json --clobber
             gh release edit "$TAG" --notes "$NOTES"
           else
-            gh release create "$TAG" "$ASSET" "$ZIP_ASSET" --title "豆包安全护盾 $VERSION" --notes "$NOTES"
+            gh release create "$TAG" "$ASSET" "$ZIP_ASSET" latest.json --title "豆包安全护盾 $VERSION" --notes "$NOTES"
           fi
 
       - name: Purge jsDelivr cache
