@@ -1,14 +1,13 @@
 {
-  "versionCode": 302,
-  "versionName": "3.0.2",
-  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v3.0.2/-3.0.2.apk",
-  "sourceUrl": "https://aka.doubaocdn.com/s/reSNJ7yMsP",
-  "sha256": "f59946d3cb2e9576be73a83a5fe1b035b57eb01dc6008dc4a24eaf2510fb7d75",
-  "size": 19066013,
+  "versionCode": 303,
+  "versionName": "3.0.3",
+  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v3.0.3/-3.0.3.apk",
+  "sourceUrl": "https://aka.doubaocdn.com/s/askdxo25eb",
+  "sha256": "489171f674d27ad02e393f7034faef534f0a44b2b5f7a3a180a6a45ea36fcd17",
+  "size": 19082393,
   "changelog": [
-    "新增 GitHub 检查更新：启动静默检查（12 小时节流），设置页可手动检查。",
-    "下载后校验 SHA-256 与签名，签名一致才拉起系统安装器。",
-    "补上 FileProvider 与未知来源安装权限流程。"
+    "GitHub 检查更新失败或超时时，明确提示检查网络/切换网络后重试，不再直接显示原始异常。",
+    "交付 APK 文件名改为「豆包安全护盾.apk」；首页品牌去掉英文，应用名改为「豆包安全护盾」。"
   ],
   "force": false
 }
