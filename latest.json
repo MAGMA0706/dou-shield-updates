@@ -1,0 +1,13 @@
+{
+  "versionCode": 302,
+  "versionName": "3.0.2",
+  "apkUrl": "https://aka.doubaocdn.com/s/reSNJ7yMsP",
+  "sha256": "f59946d3cb2e9576be73a83a5fe1b035b57eb01dc6008dc4a24eaf2510fb7d75",
+  "size": 19066013,
+  "changelog": [
+    "新增 GitHub 检查更新：启动静默检查（12 小时节流），设置页可手动检查。",
+    "下载后校验 SHA-256 与签名，签名一致才拉起系统安装器。",
+    "补上 FileProvider 与未知来源安装权限流程。"
+  ],
+  "force": false
+}
