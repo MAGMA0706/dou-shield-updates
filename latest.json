@@ -1,17 +1,18 @@
 {
-  "versionCode": 303,
-  "versionName": "3.0.3",
-  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v3.0.3/-3.0.3.apk",
-  "sourceUrl": "https://aka.doubaocdn.com/s/askdxo25eb",
-  "sha256": "489171f674d27ad02e393f7034faef534f0a44b2b5f7a3a180a6a45ea36fcd17",
-  "size": 19082393,
-  "sourcePackageUrl": "https://aka.doubaocdn.com/s/jgouVc1EWa",
-  "sourcePackageSha256": "700f70cbf1bc08954d83185db72cc3f06f2a972d19821f6da9ebceb86368b4e0",
-  "sourcePackageSize": 366756,
+  "versionCode": 304,
+  "versionName": "3.0.4",
+  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v3.0.4/-3.0.4.apk",
+  "sourceUrl": "https://aka.doubaocdn.com/s/EhgHJ62QO3",
+  "sha256": "ada980bd272381b752e3371778579674db17f1bd318f2e97925c4efea7c2920c",
+  "size": 13720477,
+  "sourcePackageUrl": "https://aka.doubaocdn.com/s/qj5wahTAw2",
+  "sourcePackageSha256": "59d3354a9bb000828d16c29c6b24f8501c54c563847fcdad3fa3452d6e91415f",
+  "sourcePackageSize": 369340,
   "changelog": [
-    "GitHub 检查更新失败或超时时，明确提示检查网络/切换网络后重试，不再直接显示原始异常。",
-    "交付 APK 文件名改为「豆包安全护盾.apk」；首页品牌去掉英文，应用名改为「豆包安全护盾」。",
-    "每个 Release 同时附带源码包 source-3.0.3.zip。"
+    "冷启动优化：翻译表按语言懒加载，Room 扫描记录按需在后台解析，首页改用 COUNT 查询。",
+    "去掉首页重复的全屏模糊背景；Shizuku/无线 ADB 初始化、跨进程开关读取移出主线程。",
+    "Release 开启 R8 代码/资源裁剪，APK 从约 19MB 降到约 14MB。",
+    "每次启动都会检查 GitHub 更新（仅当前进程防重复），不再做 12 小时节流；每次发版同时上传 APK 与源码。"
   ],
   "force": false
 }
