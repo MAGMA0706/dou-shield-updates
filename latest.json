@@ -2,17 +2,18 @@
   "versionCode": 304,
   "versionName": "3.0.4",
   "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v3.0.4/-3.0.4.apk",
-  "sourceUrl": "https://aka.doubaocdn.com/s/EhgHJ62QO3",
-  "sha256": "ada980bd272381b752e3371778579674db17f1bd318f2e97925c4efea7c2920c",
+  "sourceUrl": "https://aka.doubaocdn.com/s/nr7iTo3PAz",
+  "sha256": "ca20009e28cbc186b2f628c11d6bd3cd897934628dec3f7de7eaec87cd3cc6a5",
   "size": 13720477,
-  "sourcePackageUrl": "https://aka.doubaocdn.com/s/qj5wahTAw2",
-  "sourcePackageSha256": "59d3354a9bb000828d16c29c6b24f8501c54c563847fcdad3fa3452d6e91415f",
-  "sourcePackageSize": 369340,
+  "sourcePackageUrl": "https://aka.doubaocdn.com/s/aPaGe1Aidz",
+  "sourcePackageSha256": "b08dcb6e0b00db34852025b6260ccc08a366765a078eb05c24da9814a8939975",
+  "sourcePackageSize": 369331,
   "changelog": [
     "冷启动优化：翻译表按语言懒加载，Room 扫描记录按需在后台解析，首页改用 COUNT 查询。",
     "去掉首页重复的全屏模糊背景；Shizuku/无线 ADB 初始化、跨进程开关读取移出主线程。",
     "Release 开启 R8 代码/资源裁剪，APK 从约 19MB 降到约 14MB。",
-    "每次启动都会检查 GitHub 更新（仅当前进程防重复），不再做 12 小时节流；每次发版同时上传 APK 与源码。"
+    "每次启动都会检查 GitHub 更新（仅当前进程防重复），不再做 12 小时节流；每次发版同时上传 APK 与源码。",
+    "启动自动检查失败/超时时也显示网络提示，不再静默跳过。"
   ],
   "force": false
 }
