@@ -5,9 +5,13 @@
   "sourceUrl": "https://aka.doubaocdn.com/s/askdxo25eb",
   "sha256": "489171f674d27ad02e393f7034faef534f0a44b2b5f7a3a180a6a45ea36fcd17",
   "size": 19082393,
+  "sourcePackageUrl": "https://aka.doubaocdn.com/s/jgouVc1EWa",
+  "sourcePackageSha256": "700f70cbf1bc08954d83185db72cc3f06f2a972d19821f6da9ebceb86368b4e0",
+  "sourcePackageSize": 366756,
   "changelog": [
     "GitHub 检查更新失败或超时时，明确提示检查网络/切换网络后重试，不再直接显示原始异常。",
-    "交付 APK 文件名改为「豆包安全护盾.apk」；首页品牌去掉英文，应用名改为「豆包安全护盾」。"
+    "交付 APK 文件名改为「豆包安全护盾.apk」；首页品牌去掉英文，应用名改为「豆包安全护盾」。",
+    "每个 Release 同时附带源码包 source-3.0.3.zip。"
   ],
   "force": false
 }
