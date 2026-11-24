@@ -26,6 +26,9 @@ jobs:
           print(f"SOURCE={data.get('sourceUrl') or data['apkUrl']}")
           print(f"SHA={data['sha256']}")
           print(f"SIZE={data['size']}")
+          print(f"SOURCE_ZIP={data.get('sourcePackageUrl','')}")
+          print(f"ZIP_SHA={data.get('sourcePackageSha256','')}")
+          print(f"ZIP_SIZE={data.get('sourcePackageSize',0)}")
           PY
 
       - name: Download and verify APK
@@ -36,6 +39,16 @@ jobs:
           echo "$SHA  $ASSET" | sha256sum -c -
           test "$(stat -c%s "$ASSET")" = "$SIZE"
 
+      - name: Download and verify source package
+        shell: bash
+        run: |
+          ZIP_ASSET="source-${VERSION}.zip"
+          test -n "$SOURCE_ZIP"
+          test "$ZIP_SIZE" -gt 0
+          curl -fL --retry 3 --retry-delay 2 "$SOURCE_ZIP" -o "$ZIP_ASSET"
+          echo "$ZIP_SHA  $ZIP_ASSET" | sha256sum -c -
+          test "$(stat -c%s "$ZIP_ASSET")" = "$ZIP_SIZE"
+
       - name: Publish Release
         shell: bash
         env:
@@ -43,9 +56,12 @@ jobs:
         run: |
           TAG="v${VERSION}"
           ASSET="豆包安全护盾-${VERSION}.apk"
+          ZIP_ASSET="source-${VERSION}.zip"
           NOTES=$(python3 -c "import json;d=json.load(open('latest.json',encoding='utf-8'));print('\n'.join('- '+x for x in d.get('changelog',[])))")
+          NOTES="${NOTES}"$'\n\n'"源码包：source-${VERSION}.zip"
           if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" "$ASSET" --clobber
+            gh release upload "$TAG" "$ASSET" "$ZIP_ASSET" --clobber
+            gh release edit "$TAG" --notes "$NOTES"
           else
-            gh release create "$TAG" "$ASSET" --title "豆包安全护盾 $VERSION" --notes "$NOTES"
+            gh release create "$TAG" "$ASSET" "$ZIP_ASSET" --title "豆包安全护盾 $VERSION" --notes "$NOTES"
           fi
