@@ -1,20 +1,17 @@
 {
-  "versionCode": 305,
-  "versionName": "3.0.5",
-  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v3.0.5/-3.0.5.apk",
-  "sourceUrl": "https://aka.doubaocdn.com/s/VMgiQlQ1h1",
-  "sha256": "2007d7e41af6b3ed969b098bbc20ffaa4eae70af2c1506903ef02247cbad81ae",
+  "versionCode": 400,
+  "versionName": "4.0.0",
+  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v4.0.0/-4.0.0.apk",
+  "sourceUrl": "https://aka.doubaocdn.com/s/4vYphDMoKa",
+  "sha256": "b53d9be7b158adf4c810c3109038bd99c9e115e9d84ddf51e8f92c1adf4d1ba0",
   "size": 13720501,
-  "sourcePackageUrl": "https://aka.doubaocdn.com/s/4pyNsPiexp",
-  "sourcePackageSha256": "aec482896de0580d8815db6a24792b8d94c86b8be195ddbcc8941a1eb3a85987",
-  "sourcePackageSize": 370270,
+  "sourcePackageUrl": "https://aka.doubaocdn.com/s/9vUnDPfRab",
+  "sourcePackageSha256": "45cd5f78e0f8092884a8148bf4eb472cbe917926b35b671639f7b71922b5bda1",
+  "sourcePackageSize": 368544,
   "changelog": [
-    "修复点击「安装更新」闪退：补上 REQUEST_INSTALL_PACKAGES 权限，安装调用加最外层异常兜底。",
-    "「安装未知应用」设置页打不开时，改为提示用户手动到系统设置授权，不再静默失败。",
-    "冷启动优化：翻译表按语言懒加载，Room 扫描记录按需在后台解析，首页改用 COUNT 查询。",
-    "去掉首页重复的全屏模糊背景；Shizuku/无线 ADB 初始化、跨进程开关读取移出主线程。",
-    "Release 开启 R8 代码/资源裁剪，APK 从约 19MB 降到约 14MB。",
-    "每次启动都会检查 GitHub 更新（仅当前进程防重复），不再做 12 小时节流；每次发版同时上传 APK 与源码。"
+    "V4 UI 重写：移除全屏模糊、卡片阴影、无限扫光和逐项入场动画，改为静态背景 + 平面卡片。",
+    "V4 启动重写：Room/扫描器改为懒加载，基线扫描延后 15 秒，避免和首帧抢 CPU。",
+    "保留 3.0.5 安装闪退修复；每次启动检查 GitHub 更新，发版同时上传 APK 与源码。"
   ],
   "force": false
 }
