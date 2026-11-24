@@ -1,18 +1,17 @@
 {
-  "versionCode": 401,
-  "versionName": "4.0.1",
-  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v4.0.1/-4.0.1.apk",
-  "sourceUrl": "https://aka.doubaocdn.com/s/cuwU3YcqJ4",
-  "sha256": "47e0e775cc880a4dbc6ddb08c39f0680f45344b554ca404a7fd2e8afa6586cb7",
+  "versionCode": 402,
+  "versionName": "4.0.2",
+  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v4.0.2/-4.0.2.apk",
+  "sourceUrl": "https://aka.doubaocdn.com/s/hV1nzDBoh1",
+  "sha256": "a5a281fa0cef7f168f197cf87d3774d5bdef09a8e82d7032bbbe24cedcadfb1a",
   "size": 13720497,
-  "sourcePackageUrl": "https://aka.doubaocdn.com/s/o4Bl27NUer",
-  "sourcePackageSha256": "c234e75b691ac6fd82d81c9c8ef1a01f8f45955c3ddaa51f03b99cf7e3ed5756",
-  "sourcePackageSize": 369460,
+  "sourcePackageUrl": "https://aka.doubaocdn.com/s/cRscf7JZkv",
+  "sourcePackageSha256": "35e00fce3168c44f614a5364988779a1e9d8f88255e6e80d4107b37cfed9efff",
+  "sourcePackageSize": 369708,
   "changelog": [
-    "修复首启卡死：守护服务不再启动瞬间全量扫 176 个应用，基线扫描真正延后 15 秒。",
-    "GuardController/Room/扫描器不再在 Application.onCreate 同步构造；ADB 监听移到首帧后的 IO。",
-    "首页不再偷偷解析整张扫描记录表；打开体检页才加载完整记录。",
-    "修复自动更新被 jsDelivr 旧缓存挡住，发版后自动刷新 CDN。"
+    "更新检查改为优先读 GitHub latest release 的 latest.json 资产，raw 只做备用，不再被 jsDelivr 多节点旧缓存卡住。",
+    "每次发版把 latest.json 一起上传到 Release，releases/latest/download/latest.json 永远指向最新版本。",
+    "保留 4.0.1 的首启防卡死修复和 3.0.5 的安装闪退修复。"
   ],
   "force": false
 }
