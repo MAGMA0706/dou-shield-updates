@@ -1,17 +1,18 @@
 {
-  "versionCode": 400,
-  "versionName": "4.0.0",
-  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v4.0.0/-4.0.0.apk",
-  "sourceUrl": "https://aka.doubaocdn.com/s/o2oSy6E97k",
-  "sha256": "b53d9be7b158adf4c810c3109038bd99c9e115e9d84ddf51e8f92c1adf4d1ba0",
-  "size": 13720501,
-  "sourcePackageUrl": "https://aka.doubaocdn.com/s/cUVGQwUrbC",
-  "sourcePackageSha256": "45cd5f78e0f8092884a8148bf4eb472cbe917926b35b671639f7b71922b5bda1",
-  "sourcePackageSize": 368544,
+  "versionCode": 401,
+  "versionName": "4.0.1",
+  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v4.0.1/-4.0.1.apk",
+  "sourceUrl": "https://aka.doubaocdn.com/s/cuwU3YcqJ4",
+  "sha256": "47e0e775cc880a4dbc6ddb08c39f0680f45344b554ca404a7fd2e8afa6586cb7",
+  "size": 13720497,
+  "sourcePackageUrl": "https://aka.doubaocdn.com/s/o4Bl27NUer",
+  "sourcePackageSha256": "c234e75b691ac6fd82d81c9c8ef1a01f8f45955c3ddaa51f03b99cf7e3ed5756",
+  "sourcePackageSize": 369460,
   "changelog": [
-    "V4 UI 重写：移除全屏模糊、卡片阴影、无限扫光和逐项入场动画，改为静态背景 + 平面卡片。",
-    "V4 启动重写：Room/扫描器改为懒加载，基线扫描延后 15 秒，避免和首帧抢 CPU。",
-    "保留 3.0.5 安装闪退修复；每次启动检查 GitHub 更新，发版同时上传 APK 与源码。"
+    "修复首启卡死：守护服务不再启动瞬间全量扫 176 个应用，基线扫描真正延后 15 秒。",
+    "GuardController/Room/扫描器不再在 Application.onCreate 同步构造；ADB 监听移到首帧后的 IO。",
+    "首页不再偷偷解析整张扫描记录表；打开体检页才加载完整记录。",
+    "修复自动更新被 jsDelivr 旧缓存挡住，发版后自动刷新 CDN。"
   ],
   "force": false
 }
