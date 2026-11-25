@@ -1,17 +1,18 @@
 {
-  "versionCode": 402,
-  "versionName": "4.0.2",
-  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v4.0.2/-4.0.2.apk",
-  "sourceUrl": "https://aka.doubaocdn.com/s/hV1nzDBoh1",
-  "sha256": "a5a281fa0cef7f168f197cf87d3774d5bdef09a8e82d7032bbbe24cedcadfb1a",
-  "size": 13720497,
-  "sourcePackageUrl": "https://aka.doubaocdn.com/s/cRscf7JZkv",
-  "sourcePackageSha256": "35e00fce3168c44f614a5364988779a1e9d8f88255e6e80d4107b37cfed9efff",
-  "sourcePackageSize": 369708,
+  "versionCode": 500,
+  "versionName": "5.0.0",
+  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v5.0.0/-5.0.0.apk",
+  "sourceUrl": "https://aka.doubaocdn.com/s/DrWiiKFKMM",
+  "sha256": "c52fee590f2350748562e6397cba5f4dd2e5603888e3cf370d1bb55add5cc67a",
+  "size": 13753297,
+  "sourcePackageUrl": "https://aka.doubaocdn.com/s/pD1HBI7VKC",
+  "sourcePackageSha256": "7bd77671b87c44e1c06abc270faa3063747c2c7f3980981417ee9c617d965ab5",
+  "sourcePackageSize": 391869,
   "changelog": [
-    "更新检查改为优先读 GitHub latest release 的 latest.json 资产，raw 只做备用，不再被 jsDelivr 多节点旧缓存卡住。",
-    "每次发版把 latest.json 一起上传到 Release，releases/latest/download/latest.json 永远指向最新版本。",
-    "保留 4.0.1 的首启防卡死修复和 3.0.5 的安装闪退修复。"
+    "V5 主界面从零重写：单 Activity、4 个固定页签，不再使用 NavHost、页面过渡、玻璃卡片、渐变背景和逐项动画。",
+    "V5 启动层重写：默认不启动前台守护，不创建 Room/扫描器/GuardController；ADB、救援、应用详情只在打开「高级页」时加载。",
+    "扫描进度改成 120ms 节流，不再每扫一个应用就重绘一次；首页只查计数，不解析整张扫描记录。",
+    "更新检查优先读 GitHub Release 的 latest.json，不再受 jsDelivr 分支缓存影响。"
   ],
   "force": false
 }
