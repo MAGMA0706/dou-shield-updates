@@ -1,17 +1,17 @@
 {
-  "versionCode": 501,
-  "versionName": "5.0.1",
-  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v5.0.1/-5.0.1.apk",
-  "sourceUrl": "https://aka.doubaocdn.com/s/UXbiTqW4f1",
-  "sha256": "48bd666d34e7077e347771e3c9791d1f630fd59c444736a38f4cc154afbf47a5",
-  "size": 13753297,
-  "sourcePackageUrl": "https://aka.doubaocdn.com/s/7kxat08dYJ",
-  "sourcePackageSha256": "88f19aa99eb55aaa5c203ae334cfafdf8a81caaea372043aaabd23dacac20b44",
-  "sourcePackageSize": 392587,
+  "versionCode": 502,
+  "versionName": "5.0.2",
+  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v5.0.2/-5.0.2.apk",
+  "sourceUrl": "https://aka.doubaocdn.com/s/YkVmVb4g4t",
+  "sha256": "76bd9d24a2a77e0f3438b153a20ee9652644db816b728ff6524a4318ad61b5bb",
+  "size": 13506805,
+  "sourcePackageUrl": "https://aka.doubaocdn.com/s/4f6M9ws6Li",
+  "sourcePackageSha256": "0ef74f57d69d86c1814ddbed85d090df67664415fe8b4c0c5b71280e2bd23003",
+  "sourcePackageSize": 330861,
   "changelog": [
-    "AppContainer 只保留轻量偏好存储，Room、病毒库、扫描器、GuardController 全部移到按需创建的 LegacyContainer。",
-    "通知通道改为第一次发通知或前台服务启动时按需创建；ADB 模式初始化延后到高级页或守护服务。",
-    "首次语言选择页改用 V5 轻量界面，不再加载旧玻璃背景和玻璃卡片组件。"
+    "删除旧版 NavHost、旧页面、玻璃卡片、渐变背景、旧主题组件和 LegacyActivity 容器。",
+    "事件记录、紧急救援、ADB 通道、应用详情迁入 V5 轻量界面内部子页。",
+    "体检列表点击应用后进入新详情页；通知/救援/ADB 路由直接打开 Lite 子页。"
   ],
   "force": false
 }
