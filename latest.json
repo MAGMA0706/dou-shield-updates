@@ -1,18 +1,17 @@
 {
-  "versionCode": 500,
-  "versionName": "5.0.0",
-  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v5.0.0/-5.0.0.apk",
-  "sourceUrl": "https://aka.doubaocdn.com/s/DrWiiKFKMM",
-  "sha256": "c52fee590f2350748562e6397cba5f4dd2e5603888e3cf370d1bb55add5cc67a",
+  "versionCode": 501,
+  "versionName": "5.0.1",
+  "apkUrl": "https://github.com/MAGMA0706/dou-shield-updates/releases/download/v5.0.1/-5.0.1.apk",
+  "sourceUrl": "https://aka.doubaocdn.com/s/UXbiTqW4f1",
+  "sha256": "48bd666d34e7077e347771e3c9791d1f630fd59c444736a38f4cc154afbf47a5",
   "size": 13753297,
-  "sourcePackageUrl": "https://aka.doubaocdn.com/s/pD1HBI7VKC",
-  "sourcePackageSha256": "7bd77671b87c44e1c06abc270faa3063747c2c7f3980981417ee9c617d965ab5",
-  "sourcePackageSize": 391869,
+  "sourcePackageUrl": "https://aka.doubaocdn.com/s/7kxat08dYJ",
+  "sourcePackageSha256": "88f19aa99eb55aaa5c203ae334cfafdf8a81caaea372043aaabd23dacac20b44",
+  "sourcePackageSize": 392587,
   "changelog": [
-    "V5 主界面从零重写：单 Activity、4 个固定页签，不再使用 NavHost、页面过渡、玻璃卡片、渐变背景和逐项动画。",
-    "V5 启动层重写：默认不启动前台守护，不创建 Room/扫描器/GuardController；ADB、救援、应用详情只在打开「高级页」时加载。",
-    "扫描进度改成 120ms 节流，不再每扫一个应用就重绘一次；首页只查计数，不解析整张扫描记录。",
-    "更新检查优先读 GitHub Release 的 latest.json，不再受 jsDelivr 分支缓存影响。"
+    "AppContainer 只保留轻量偏好存储，Room、病毒库、扫描器、GuardController 全部移到按需创建的 LegacyContainer。",
+    "通知通道改为第一次发通知或前台服务启动时按需创建；ADB 模式初始化延后到高级页或守护服务。",
+    "首次语言选择页改用 V5 轻量界面，不再加载旧玻璃背景和玻璃卡片组件。"
   ],
   "force": false
 }
